@@ -1,7 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { useEffect } from "react";
+import "./App.css";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    axios({ url: "https://nodejsgdapi.us-east-1.elasticbeanstalk.com" }).then(
+      ({ data }) => console.log(data)
+    );
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
